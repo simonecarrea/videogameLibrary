@@ -1,1 +1,58 @@
-<!doctype html><html lang="it"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GameShelf</title><link rel="stylesheet" href="styles.css"></head><body><div class="app-shell"><aside><div class="brand">🎮 <span>GameShelf</span></div><nav><button class="nav active" data-view="library">La mia libreria</button><button class="nav" data-view="catalog">Catalogo</button><button class="nav" data-view="wishlist">Da giocare</button></nav><div class="note">POC • dati locali<br>Prezzi indicativi, non live.</div></aside><main><header><div><p class="eyebrow">VIDEOGAME LIBRARY</p><h1 id="viewTitle">La mia libreria</h1></div><input id="search" type="search" placeholder="Cerca un gioco…"></header><section id="stats" class="stats"></section><section class="toolbar"><select id="platformFilter"><option value="all">Tutte le piattaforme</option><option>PS5</option><option>Steam</option><option>Switch 2</option></select><select id="statusFilter"><option value="all">Tutti gli stati</option><option>In corso</option><option>Giocati</option><option>Da giocare</option></select></section><section id="content" class="grid"></section></main></div><dialog id="detail"><button id="closeDetail" class="close">×</button><div id="detailContent"></div></dialog><script src="data.js"></script><script src="app.js"></script></body></html>
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#080a0f">
+  <title>GameShelf</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">G</span><span class="brand-name">GameShelf</span></div>
+      <nav>
+        <button class="nav active" data-view="library"><span class="nav-icon">⌂</span><span>Home</span></button>
+        <button class="nav" data-view="catalog"><span class="nav-icon">▦</span><span>Catalogo</span></button>
+        <button class="nav" data-view="wishlist"><span class="nav-icon">♡</span><span>Da giocare</span></button>
+      </nav>
+      <div class="sidebar-library">
+        <p>LA TUA LIBRERIA</p>
+        <div class="platform-mini"><i class="dot ps"></i>PlayStation 5</div>
+        <div class="platform-mini"><i class="dot steam"></i>Steam</div>
+        <div class="platform-mini"><i class="dot switch"></i>Switch 2</div>
+      </div>
+      <div class="profile"><div class="avatar">SC</div><div><b>Simone</b><small>Libreria personale</small></div></div>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <div class="mobile-brand"><span class="brand-mark">G</span> GameShelf</div>
+        <div class="search-wrap"><span>⌕</span><input id="search" type="search" placeholder="Cerca nella tua collezione…"></div>
+        <button class="round-btn" aria-label="Notifiche">●</button>
+      </header>
+
+      <section id="hero" class="hero"></section>
+
+      <section class="page-heading">
+        <div><p class="eyebrow">LA TUA COLLEZIONE</p><h1 id="viewTitle">Bentornato, Simone</h1></div>
+        <div class="toolbar">
+          <select id="platformFilter"><option value="all">Tutte le piattaforme</option><option>PS5</option><option>Steam</option><option>Switch 2</option></select>
+          <select id="statusFilter"><option value="all">Tutti gli stati</option><option>In corso</option><option>Giocati</option><option>Da giocare</option></select>
+        </div>
+      </section>
+
+      <section id="stats" class="stats"></section>
+      <div class="section-line"><h2 id="sectionTitle">I tuoi giochi</h2><span id="resultCount"></span></div>
+      <section id="content" class="grid"></section>
+    </main>
+  </div>
+
+  <dialog id="detail"><button id="closeDetail" class="close" aria-label="Chiudi">×</button><div id="detailContent"></div></dialog>
+  <script src="data.js"></script><script src="app.js"></script>
+</body>
+</html>
