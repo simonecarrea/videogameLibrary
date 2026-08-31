@@ -9,11 +9,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="ux-v2.css">
+  <link rel="stylesheet" href="styles.css?v=4">
+  <link rel="stylesheet" href="ux-v2.css?v=4">
 </head>
 <body>
-<div style="position:fixed;top:6px;right:8px;z-index:9999;background:#7c3aed;color:white;padding:5px 8px;border-radius:999px;font:700 11px/1 Inter,sans-serif;box-shadow:0 4px 16px #0008">BUILD 0.3 TEST</div>
+<div style="position:fixed;top:6px;right:8px;z-index:9999;background:#7c3aed;color:white;padding:5px 8px;border-radius:999px;font:700 11px/1 Inter,sans-serif;box-shadow:0 4px 16px #0008">BUILD 0.4</div>
 <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
 <div class="app-shell">
   <aside class="sidebar">
@@ -49,6 +49,7 @@
 </div>
 <dialog id="detail"><button id="closeDetail" class="close" aria-label="Chiudi">×</button><div id="detailContent"></div></dialog>
 <dialog id="settings" class="settings-dialog"><button class="close" id="closeSettings">×</button><div class="settings-body"><p class="eyebrow">INTEGRAZIONI</p><h2>Catalogo e prezzi live</h2><p class="settings-copy">Le chiavi restano salvate solo su questo dispositivo. Nessun login e nessun segreto viene inserito nel repository.</p><label>RAWG API key <input id="rawgKey" type="password" placeholder="Per catalogo, cover e dettagli reali"></label><small>RAWG è gratuito per progetti personali con attribuzione.</small><label>IsThereAnyDeal API key <input id="itadKey" type="password" placeholder="Opzionale, per prezzi PC live"></label><small>I prezzi live dipendono dai termini e dalla disponibilità del provider.</small><button class="save-settings" id="saveSettings">Salva configurazione</button><div id="settingsStatus"></div></div></dialog>
-<script src="data.js?v=3"></script><script src="migration.js?v=3"></script><script src="integrations.js?v=3"></script><script src="app.js?v=3"></script>
+<script src="data.js?v=4"></script>
+<script src="mobile-app.js?v=4"></script>
 </body>
 </html>
