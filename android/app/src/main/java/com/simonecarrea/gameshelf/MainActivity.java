@@ -1,8 +1,10 @@
 package com.simonecarrea.gameshelf;
 
 import android.app.Activity;
-import android.os.Build;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Window;
+import android.view.WindowManager;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -14,8 +16,15 @@ public class MainActivity extends Activity {
   @Override public void onCreate(Bundle savedInstanceState){
     super.onCreate(savedInstanceState);
 
+    Window window = getWindow();
+    window.setStatusBarColor(Color.rgb(8,10,15));
+    window.setNavigationBarColor(Color.rgb(8,10,15));
+    window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+    window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+
     webView = new WebView(this);
-    webView.setBackgroundColor(0xFF080A0F);
+    webView.setBackgroundColor(Color.rgb(8,10,15));
+    webView.setFitsSystemWindows(true);
 
     WebSettings settings = webView.getSettings();
     settings.setJavaScriptEnabled(true);
@@ -26,19 +35,8 @@ public class MainActivity extends Activity {
     settings.setAllowContentAccess(false);
 
     webView.setWebViewClient(new WebViewClient());
-
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-      webView.setOnApplyWindowInsetsListener((view, insets) -> {
-        int top = insets.getSystemWindowInsetTop();
-        int bottom = insets.getSystemWindowInsetBottom();
-        view.setPadding(0, top, 0, bottom);
-        return insets;
-      });
-      webView.requestApplyInsets();
-    }
-
-    webView.loadUrl(LOCAL_APP_URL);
     setContentView(webView);
+    webView.loadUrl(LOCAL_APP_URL);
   }
 
   @Override public void onBackPressed(){
