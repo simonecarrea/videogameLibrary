@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="ux-v2.css">
 </head>
 <body>
 <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
@@ -29,37 +30,22 @@
     </div>
     <div class="profile"><div class="avatar">SC</div><div><b>Simone</b><small>Libreria personale</small></div></div>
   </aside>
-
   <main>
     <header class="topbar">
       <div class="mobile-brand"><span class="brand-mark">G</span> GameShelf</div>
       <div class="search-wrap"><span>⌕</span><input id="search" type="search" placeholder="Cerca nella tua libreria…"></div>
       <button class="round-btn" id="settingsButton" aria-label="Impostazioni">⚙</button>
     </header>
-
     <section id="hero" class="hero"></section>
-
     <section id="platformLibraries" class="platform-libraries">
       <div class="platform-library ps-card" data-platform="PS5"><span>PS5</span><strong id="psCount">0 giochi</strong><button data-open-platform="PS5">Apri libreria</button></div>
       <div class="platform-library steam-card" data-platform="Steam"><span>STEAM</span><strong id="steamCount">0 giochi</strong><button data-open-platform="Steam">Apri libreria</button></div>
       <div class="platform-library switch-card" data-platform="Switch 2"><span>SWITCH 2</span><strong id="switchCount">0 giochi</strong><button data-open-platform="Switch 2">Apri libreria</button></div>
     </section>
-
-    <section class="page-heading">
-      <div><p class="eyebrow" id="viewEyebrow">LA TUA COLLEZIONE</p><h1 id="viewTitle">Bentornato, Simone</h1></div>
-      <div class="toolbar">
-        <select id="platformFilter"><option value="all">Tutte le piattaforme</option><option>PS5</option><option>Steam</option><option>Switch 2</option></select>
-        <select id="statusFilter"><option value="all">Tutti gli stati</option><option>In corso</option><option>Giocati</option><option>Da giocare</option></select>
-      </div>
-    </section>
-
-    <section id="stats" class="stats"></section>
-    <div class="section-line"><h2 id="sectionTitle">I tuoi giochi</h2><span id="resultCount"></span></div>
-    <section id="content" class="grid"></section>
-    <div id="sourceNote" class="source-note"></div>
+    <section class="page-heading"><div><p class="eyebrow" id="viewEyebrow">LA TUA COLLEZIONE</p><h1 id="viewTitle">Bentornato, Simone</h1></div><div class="toolbar"><select id="platformFilter"><option value="all">Tutte le piattaforme</option><option>PS5</option><option>Steam</option><option>Switch 2</option></select><select id="statusFilter"><option value="all">Tutti gli stati</option><option>In corso</option><option>Giocati</option><option>Da giocare</option></select></div></section>
+    <section id="stats" class="stats"></section><div class="section-line"><h2 id="sectionTitle">I tuoi giochi</h2><span id="resultCount"></span></div><section id="content" class="grid"></section><div id="sourceNote" class="source-note"></div>
   </main>
 </div>
-
 <dialog id="detail"><button id="closeDetail" class="close" aria-label="Chiudi">×</button><div id="detailContent"></div></dialog>
 <dialog id="settings" class="settings-dialog"><button class="close" id="closeSettings">×</button><div class="settings-body"><p class="eyebrow">INTEGRAZIONI</p><h2>Catalogo e prezzi live</h2><p class="settings-copy">Le chiavi restano salvate solo su questo dispositivo. Nessun login e nessun segreto viene inserito nel repository.</p><label>RAWG API key <input id="rawgKey" type="password" placeholder="Per catalogo, cover e dettagli reali"></label><small>RAWG è gratuito per progetti personali con attribuzione.</small><label>IsThereAnyDeal API key <input id="itadKey" type="password" placeholder="Opzionale, per prezzi PC live"></label><small>I prezzi live dipendono dai termini e dalla disponibilità del provider.</small><button class="save-settings" id="saveSettings">Salva configurazione</button><div id="settingsStatus"></div></div></dialog>
 <script src="data.js"></script><script src="integrations.js"></script><script src="app.js"></script>
