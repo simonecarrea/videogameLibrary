@@ -3,7 +3,9 @@ name: Build GameShelf Android APK
 on:
   workflow_dispatch:
   push:
-    branches: [main]
+    branches:
+      - main
+      - agent/api-android-foundation
     paths:
       - 'android/**'
       - '.github/workflows/android.yml'
