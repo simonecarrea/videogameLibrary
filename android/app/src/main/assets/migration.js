@@ -1,7 +1,7 @@
-// One-time migration for the first bundled Android release.
-// Older WebView installs may have persisted an empty gameshelf-library array.
+// Development seed migration for bundled Android builds.
+// If an older install persisted an empty library, restore the known starter library once.
 (() => {
-  const migrationKey = 'gameshelf-migration-v2-seeded';
+  const migrationKey = 'gameshelf-migration-v3-seeded';
   if (localStorage.getItem(migrationKey)) return;
 
   let existing = null;
